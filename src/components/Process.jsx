@@ -3,26 +3,37 @@ const Process = () => {
     {
       number: 1,
       title: "Nos cuentas qué necesitas",
-      description: "Escribe por WhatsApp qué tipo de página necesitas, tu negocio y qué quieres destacar. Te haremos algunas preguntas simples para entender mejor."
+      description: "Escribe por WhatsApp qué tipo de página necesitas, tu negocio y qué quieres destacar. Te haremos algunas preguntas simples para entender mejor.",
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
       number: 2,
       title: "Te diseñamos tu página web",
-      description: "Creamos tu página en 72 horas"
+      description: "Creamos tu página en 72 horas",
+      gradient: "from-purple-500 to-pink-500"
     },
     {
       number: 3,
       title: "Recibes tus archivos listos",
-      description: "Te enviamos todos los archivos de tu página. Solo súbelos a tu hosting preferido y estará funcionando en minutos."
+      description: "Te enviamos todos los archivos de tu página. Solo súbelos a tu hosting preferido y estará funcionando en minutos.",
+      gradient: "from-green-500 to-emerald-500"
     }
   ];
 
   return (
-    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50" id="proceso">
-      <div className="container mx-auto max-w-7xl">
+    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-blue-50 to-white relative overflow-hidden" id="proceso">
+      {/* Background decorativo */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-400 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative container mx-auto max-w-7xl">
         <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6">
-            Cómo funciona
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 mb-6">
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+              Cómo funciona
+            </span>
           </h2>
           <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Proceso simple y directo. En 3 pasos tendrás tu página web lista para anunciarte.
@@ -30,18 +41,22 @@ const Process = () => {
         </div>
 
         <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 max-w-6xl mx-auto relative">
-          {/* Línea conectora para desktop */}
-          <div className="hidden md:block absolute top-16 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-green-200 to-blue-200 z-0"></div>
+          {/* Línea conectora animada para desktop */}
+          <div className="hidden md:block absolute top-20 left-0 right-0 h-2 bg-gradient-to-r from-blue-200 via-purple-200 to-green-200 rounded-full z-0">
+            <div className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 rounded-full animate-pulse" style={{width: '100%'}}></div>
+          </div>
           
           {steps.map((step, index) => (
-            <div key={index} className="relative z-10 text-center">
+            <div key={index} className="relative z-10 text-center group">
               <div className="relative mb-8">
-                <div className="w-24 h-24 sm:w-28 sm:h-28 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center mx-auto shadow-2xl transform hover:scale-110 transition-transform duration-300">
-                  <span className="text-4xl sm:text-5xl font-extrabold text-white">{step.number}</span>
+                <div className={`w-32 h-32 sm:w-36 sm:h-36 bg-gradient-to-r ${step.gradient} rounded-full flex items-center justify-center mx-auto shadow-2xl transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+                  <span className="text-5xl sm:text-6xl font-black text-white drop-shadow-lg">{step.number}</span>
                 </div>
+                {/* Glow effect */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${step.gradient} rounded-full blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500`}></div>
               </div>
               
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                 {step.title}
               </h3>
               
@@ -54,9 +69,9 @@ const Process = () => {
 
         {/* Nota adicional */}
         <div className="mt-20 max-w-3xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-lg p-8 lg:p-10 border-2 border-gray-100">
-            <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-center">
-              <strong className="text-gray-900">Nota importante:</strong> Recuerda que necesitarás un hosting y dominio por tu cuenta. 
+          <div className="bg-gradient-to-r from-yellow-400 to-orange-400 rounded-3xl shadow-2xl p-8 lg:p-10 border-4 border-white transform hover:scale-105 transition-transform duration-300">
+            <p className="text-lg sm:text-xl text-gray-900 leading-relaxed text-center font-bold">
+              <span className="text-2xl">Nota importante:</span> Recuerda que necesitarás un hosting y dominio por tu cuenta. 
               Te podemos recomendar opciones económicas si lo necesitas.
             </p>
           </div>
