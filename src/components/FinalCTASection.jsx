@@ -1,11 +1,12 @@
 import React from 'react';
-import { WHATSAPP_BASE_URL, WHATSAPP_MESSAGES } from '../constants/whatsapp';
+import { generateWhatsAppLink, WHATSAPP_MESSAGES } from '../constants/whatsapp';
 
 /**
- * Sección CTA final
+ * Componente: Sección CTA Final
+ * Single Responsibility: Solo renderiza el CTA final
  */
 const FinalCTASection = () => {
-  const whatsappLink = `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(WHATSAPP_MESSAGES.general)}`;
+  const whatsappLink = generateWhatsAppLink(WHATSAPP_MESSAGES.general);
 
   return (
     <section className="py-20 sm:py-28 bg-gradient-to-br from-emerald-600 via-emerald-500 to-cyan-500 relative overflow-hidden">

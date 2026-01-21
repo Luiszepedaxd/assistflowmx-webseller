@@ -1,21 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { WHATSAPP_BASE_URL, WHATSAPP_MESSAGES } from '../constants/whatsapp';
+import React from 'react';
+import { useScrollVisibility } from '../hooks/useScrollVisibility';
+import { generateWhatsAppLink, WHATSAPP_MESSAGES } from '../constants/whatsapp';
 
 /**
- * Botón flotante de WhatsApp que aparece al hacer scroll
+ * Componente: Botón flotante de WhatsApp
+ * Single Responsibility: Solo renderiza el botón flotante de WhatsApp
  */
 const WhatsAppFloatingButton = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const toggleVisibility = () => {
-      setIsVisible(window.scrollY > 300);
-    };
-    window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
-  }, []);
-
-  const whatsappLink = `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(WHATSAPP_MESSAGES.general)}`;
+  const isVisible = useScrollVisibility(300);
+  const whatsappLink = generateWhatsAppLink(WHATSAPP_MESSAGES.general);
 
   return (
     <a

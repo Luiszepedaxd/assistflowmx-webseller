@@ -1,42 +1,11 @@
 import React from 'react';
+import { BENEFITS } from '../constants/content';
 
 /**
- * Sección de beneficios
+ * Componente: Sección de Beneficios
+ * Single Responsibility: Solo renderiza la sección de beneficios
  */
 const BenefitsSection = () => {
-  const benefits = [
-    {
-      number: "01",
-      title: "Ahorra tiempo y dinero",
-      description: "Sin contratos mensuales ni costos de mantenimiento. Pagas una vez y la página es tuya para siempre."
-    },
-    {
-      number: "02",
-      title: "Sin conocimientos técnicos",
-      description: "Nosotros nos encargamos de todo el diseño y desarrollo. Tú solo nos dices qué necesitas."
-    },
-    {
-      number: "03",
-      title: "Perfecta para publicidad",
-      description: "Diseñadas específicamente para funcionar con campañas de Facebook Ads, Google Ads e Instagram."
-    },
-    {
-      number: "04",
-      title: "Archivos 100% tuyos",
-      description: "Te entregamos el código completo. Puedes modificarlo, moverlo o hacer lo que quieras con él."
-    },
-    {
-      number: "05",
-      title: "Soporte por WhatsApp",
-      description: "¿Tienes dudas? Te orientamos sin costo sobre cómo subir tu página y ponerla en línea."
-    },
-    {
-      number: "06",
-      title: "Diseño que convierte",
-      description: "Cada elemento está pensado para que tus visitantes se conviertan en clientes."
-    }
-  ];
-
   return (
     <section id="beneficios" className="py-20 sm:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-6">
@@ -57,7 +26,7 @@ const BenefitsSection = () => {
 
         {/* Grid de beneficios */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {benefits.map((benefit, index) => (
+          {BENEFITS.map((benefit, index) => (
             <div key={index} className="group">
               <span className="text-6xl font-bold text-slate-100 group-hover:text-emerald-100 transition-colors duration-300">
                 {benefit.number}

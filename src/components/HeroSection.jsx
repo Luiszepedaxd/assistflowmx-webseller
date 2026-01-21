@@ -1,11 +1,12 @@
 import React from 'react';
-import { WHATSAPP_BASE_URL, WHATSAPP_MESSAGES } from '../constants/whatsapp';
+import { generateWhatsAppLink, WHATSAPP_MESSAGES } from '../constants/whatsapp';
 
 /**
- * Sección Hero principal
+ * Componente: Sección Hero Principal
+ * Single Responsibility: Solo renderiza la sección hero
  */
 const HeroSection = () => {
-  const whatsappLink = `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(WHATSAPP_MESSAGES.general)}`;
+  const whatsappLink = generateWhatsAppLink(WHATSAPP_MESSAGES.general);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">

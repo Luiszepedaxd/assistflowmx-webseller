@@ -1,37 +1,16 @@
 import React, { useState } from 'react';
+import { FAQS } from '../constants/content';
 
 /**
- * Sección de preguntas frecuentes (FAQ)
+ * Componente: Sección FAQ - Preguntas Frecuentes
+ * Single Responsibility: Solo maneja el acordeón de FAQs
  */
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const faqs = [
-    {
-      question: "¿Qué recibo exactamente?",
-      answer: "Recibes los archivos de tu página web (HTML, CSS y JavaScript) listos para usar. Son archivos que puedes abrir en cualquier navegador y subir a cualquier servicio de hosting."
-    },
-    {
-      question: "¿Por qué no incluyen hosting ni dominio?",
-      answer: "Porque queremos ofrecerte el precio más accesible posible. El hosting y dominio tienen costos recurrentes (mensuales o anuales) que varían según el proveedor. Así tú eliges dónde alojar tu página y controlas esos gastos."
-    },
-    {
-      question: "¿Dónde puedo subir mi página?",
-      answer: "Hay muchas opciones gratuitas y de pago: Netlify, Vercel, GitHub Pages (gratuitos), o servicios como GoDaddy, Hostinger, Namecheap (de pago). Te orientamos sin costo sobre cuál te conviene más."
-    },
-    {
-      question: "¿Puedo hacer cambios después de recibir mi página?",
-      answer: "¡Sí! Te entregamos los archivos completos y editables. Si sabes algo de código puedes modificarlos, o puedes contratarnos para hacer cambios adicionales."
-    },
-    {
-      question: "¿Las páginas funcionan para anuncios de Facebook/Google?",
-      answer: "¡Absolutamente! Nuestras páginas están diseñadas específicamente para funcionar como landing pages en campañas publicitarias. Son rápidas, responsivas y con CTAs claros."
-    },
-    {
-      question: "¿Cómo es el proceso de pago?",
-      answer: "50% al iniciar el proyecto y 50% al entregar. Aceptamos transferencia bancaria, depósito en OXXO y pagos por Mercado Pago."
-    }
-  ];
+  const handleToggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <section id="faq" className="py-20 sm:py-28 bg-slate-900">
@@ -51,13 +30,13 @@ const FAQSection = () => {
 
         {/* Acordeón de FAQs */}
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
+          {FAQS.map((faq, index) => (
             <div
               key={index}
               className="bg-slate-800/50 border border-slate-700 rounded-2xl overflow-hidden"
             >
               <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                onClick={() => handleToggle(index)}
                 className="w-full flex items-center justify-between p-6 text-left hover:bg-slate-800/80 transition-colors"
               >
                 <span className="font-semibold text-white pr-4">{faq.question}</span>

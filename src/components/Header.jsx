@@ -1,19 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { WHATSAPP_BASE_URL, WHATSAPP_MESSAGES } from '../constants/whatsapp';
+import React from 'react';
+import { useScrollState } from '../hooks/useScrollState';
+import { generateWhatsAppLink, WHATSAPP_MESSAGES } from '../constants/whatsapp';
 
 /**
- * Header fijo con navegación y CTA
+ * Componente: Header / Navegación
+ * Single Responsibility: Solo maneja la navegación y header
  */
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const whatsappLink = `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(WHATSAPP_MESSAGES.general)}`;
+  const scrolled = useScrollState(50);
+  const whatsappLink = generateWhatsAppLink(WHATSAPP_MESSAGES.general);
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
