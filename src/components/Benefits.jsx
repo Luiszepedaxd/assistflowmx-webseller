@@ -1,58 +1,89 @@
-import Card from './Card';
-
 const Benefits = () => {
   const benefits = [
     {
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      title: "Ahorro de tiempo",
-      description: "Tus clientes reciben respuestas inmediatas"
+      title: "Precio Accesible",
+      description: "Desde $1,200 MXN. Perfecto para emprendedores y negocios pequeños que quieren empezar sin una inversión grande."
     },
     {
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" fill="currentColor"/>
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
-      title: "Atencion 24/7",
-      description: "Tu negocio nunca duerme"
+      title: "Entrega Rápida",
+      description: "Tu página lista en 72 horas. No esperes semanas o meses, empieza a recibir clientes casi de inmediato."
     },
     {
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" fill="currentColor"/>
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
-      title: "Mas ventas",
-      description: "Atiende mas rapido, cierra mas clientes"
+      title: "Sin Complicaciones",
+      description: "No necesitas saber de código, servidores o bases de datos. Solo sube los archivos y tu página funcionará."
     },
     {
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
         </svg>
       ),
-      title: "Costo accesible",
-      description: "Automatizacion al alcance de PYMEs"
+      title: "Enfocado en Ventas",
+      description: "Diseño pensado para convertir. Cada elemento está optimizado para que tus visitantes se conviertan en clientes."
+    },
+    {
+      icon: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      title: "Listo para Anuncios",
+      description: "Ideal para campañas en Facebook, Google Ads o Instagram. Diseño optimizado para maximizar tus conversiones."
+    },
+    {
+      icon: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+        </svg>
+      ),
+      title: "Total Control",
+      description: "Los archivos son tuyos. Sin dependencia de terceros. Sube, modifica o mueve tu página cuando quieras."
     }
   ];
 
   return (
-    <section className="benefits" id="beneficios">
-      <div className="container">
-        <h2>Por que elegir AssistFlowMX?</h2>
-        <div className="benefits-grid">
+    <section className="py-20 px-4 bg-white" id="beneficios">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            ¿Por qué elegir AssistFlowMX?
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            Páginas web simples, rápidas y efectivas. Sin complicaciones técnicas, sin sorpresas.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
-            <Card key={index} className="benefit-card">
-              <div className="benefit-icon">
+            <div
+              key={index}
+              className="bg-gray-50 p-8 rounded-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+            >
+              <div className="text-blue-500 mb-4">
                 {benefit.icon}
               </div>
-              <h3>{benefit.title}</h3>
-              <p>{benefit.description}</p>
-            </Card>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                {benefit.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {benefit.description}
+              </p>
+            </div>
           ))}
         </div>
       </div>
