@@ -1,192 +1,164 @@
-# AssistFlowMX
+# AssistFlowMX - Landing Page
 
-Landing page moderna para AssistFlowMX - Automatización de atención al cliente en WhatsApp.
+Landing page comercial para generación de leads vía WhatsApp, diseñada para PYMEs, emprendedores y comercios locales en México.
 
-## 🚀 Descripción
+## 🚀 Características
 
-Sitio web responsivo desarrollado con **React + Vite** que presenta los servicios de automatización de AssistFlowMX, enfocado en cotizaciones automáticas y atención 24/7 a través de WhatsApp.
-
-## ✨ Características
-
-- ⚡ **React + Vite** - Desarrollo rápido y eficiente
-- 📱 Diseño responsivo optimizado para mobile y desktop
-- 🎨 Animaciones suaves y efectos hover
-- 💬 Mockup interactivo de WhatsApp
-- 🔍 Optimizado para SEO
-- ⚙️ Hooks personalizados para mejor organización
-- 🚀 Listo para deployment en Vercel
+- ✅ React + Vite + Tailwind CSS
+- ✅ Diseño 100% responsive
+- ✅ One-page con scroll suave
+- ✅ Animaciones y hover effects
+- ✅ Botón de WhatsApp flotante
+- ✅ Arquitectura modular siguiendo principios SOLID
+- ✅ Componentes separados y reutilizables
+- ✅ Secciones: Hero, Servicios, Paquetes, Beneficios, Proceso, FAQ, CTA
+- ✅ Optimizado para conversión
 
 ## 📁 Estructura del Proyecto
 
 ```
 assistflowmx/
 ├── src/
-│   ├── components/         # Componentes React
-│   │   ├── Hero.jsx
-│   │   ├── Services.jsx
-│   │   ├── Benefits.jsx
-│   │   ├── Process.jsx
-│   │   ├── Pricing.jsx
-│   │   ├── FinalCTA.jsx
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── HeroSection.jsx
+│   │   ├── WhatWeOfferSection.jsx
+│   │   ├── PricingSection.jsx
+│   │   ├── BenefitsSection.jsx
+│   │   ├── ProcessSection.jsx
+│   │   ├── FAQSection.jsx
+│   │   ├── FinalCTASection.jsx
 │   │   ├── Footer.jsx
-│   │   └── WhatsAppButton.jsx
-│   ├── hooks/              # Hooks personalizados
-│   │   ├── useAnalytics.js
-│   │   ├── useAnimations.js
-│   │   ├── useScrollToTop.js
-│   │   └── useSmoothScrolling.js
-│   ├── constants/          # Constantes del proyecto
-│   │   └── contact.js      # Número de WhatsApp y mensajes
-│   ├── App.jsx             # Componente principal
-│   ├── main.jsx            # Punto de entrada
-│   └── index.css           # Estilos globales
-├── public/                 # Archivos estáticos
-├── dist/                   # Build de producción (generado)
-├── vercel.json             # Configuración de Vercel
-├── vite.config.js          # Configuración de Vite
-├── package.json            # Dependencias y scripts
-└── README.md               # Este archivo
+│   │   └── WhatsAppFloatingButton.jsx
+│   ├── constants/
+│   │   └── whatsapp.js
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── index.html
+├── package.json
+├── vite.config.js
+├── tailwind.config.js
+├── vercel.json
+└── README.md
 ```
 
-## 🛠️ Instalación y Desarrollo Local
+## 📦 Instalación
 
-### Prerrequisitos
-
-- Node.js (v18 o superior)
-- npm o yarn
-
-### Pasos para correr el proyecto
-
-1. **Instalar dependencias** (si no las tienes):
 ```bash
+# Instalar dependencias
 npm install
-```
 
-2. **Iniciar servidor de desarrollo**:
-```bash
+# Ejecutar en desarrollo
 npm run dev
-```
-O también:
-```bash
-npm start
-```
 
-El proyecto se abrirá automáticamente en `http://localhost:3000`
-
-3. **Crear build de producción**:
-```bash
+# Construir para producción
 npm run build
-```
 
-4. **Previsualizar el build**:
-```bash
+# Preview de producción
 npm run preview
 ```
 
-## 🚀 Deployment en Vercel
+## ⚙️ Configuración
 
-El proyecto ya está configurado para Vercel con `vercel.json`.
+### Número de WhatsApp
 
-### Opción 1: Deploy desde terminal
-```bash
-npm run deploy
-```
+Edita `src/constants/whatsapp.js`:
 
-### Opción 2: Conectar con GitHub
-
-1. Sube tu código a GitHub:
-```bash
-git add .
-git commit -m "Actualización"
-git push origin main
-```
-
-2. Conecta tu repositorio en [Vercel](https://vercel.com)
-3. Vercel detectará automáticamente la configuración de Vite
-4. El sitio se desplegará automáticamente
-
-### Dominio personalizado
-
-El proyecto está configurado para usar `assistflowmx.online`:
-1. Ve a la configuración del proyecto en Vercel
-2. Agrega `assistflowmx.online` en la sección de dominios
-3. Configura los DNS según las instrucciones de Vercel
-
-## 🔧 Personalización
-
-### Cambiar número de WhatsApp
-
-Edita el archivo `src/constants/contact.js`:
 ```javascript
-export const WHATSAPP_NUMBER = "5213322705363"; // Cambia este número
+export const WHATSAPP_NUMBER = "521234567890"; // Cambia por tu número real
 ```
 
-### Modificar mensajes predefinidos
+**Formato:** Código de país + número sin espacios ni guiones
+- México: `521234567890`
 
-Los mensajes están en `src/constants/contact.js` en el objeto `MESSAGES`:
-- `HERO` - Mensaje desde la sección principal
-- `PILOT_PLAN` - Mensaje para plan piloto
-- `MONTHLY_PLAN` - Mensaje para plan mensual
-- `FINAL_CTA` - Mensaje desde el CTA final
+### Mensajes de WhatsApp
 
-### Actualizar contenido
+Personaliza los mensajes predeterminados en `src/constants/whatsapp.js`:
 
-- **Texto**: Edita los componentes en `src/components/`
-- **Estilos**: Modifica `src/index.css` o los estilos inline en los componentes
-- **Colores principales**: Busca las variables CSS en `src/index.css`
+```javascript
+export const WHATSAPP_MESSAGES = {
+  general: "Hola, me interesa conocer más sobre los servicios de AssistFlowMX",
+  basico: "Hola, me interesa el Paquete Básico de $1,200 MXN",
+  interactivo: "Hola, me interesa el Paquete Interactivo de $2,200 MXN",
+  publicitaria: "Hola, me interesa el Paquete Landing Publicitaria de $3,200 MXN",
+};
+```
 
-## 📦 Scripts Disponibles
+## 🎨 Personalización
 
-- `npm run dev` - Inicia servidor de desarrollo
-- `npm start` - Alias para `npm run dev`
-- `npm run build` - Crea build de producción
-- `npm run preview` - Previsualiza el build
-- `npm run deploy` - Despliega a Vercel (producción)
+### Colores principales
 
-## 🌐 Repositorio Git
+El diseño usa principalmente:
+- **Emerald** (verde): para CTAs y elementos de acción
+- **Cyan**: para acentos secundarios
+- **Slate**: para fondos y textos
 
-El proyecto está conectado a:
-- **GitHub**: `https://github.com/assistflowmx/assistflowmx.git`
-- **Rama principal**: `main`
+Puedes modificar los colores buscando y reemplazando las clases de Tailwind en los componentes.
 
-### Comandos Git útiles
+### Contenido
+
+Cada sección tiene su propio componente. Modifica el contenido directamente en:
+- `WhatWeOfferSection.jsx` - características
+- `PricingSection.jsx` - paquetes y precios
+- `BenefitsSection.jsx` - beneficios
+- `ProcessSection.jsx` - pasos del proceso
+- `FAQSection.jsx` - preguntas frecuentes
+
+## 📱 Secciones
+
+1. **Header** - Navegación fija con logo y CTA
+2. **Hero** - Mensaje principal y llamada a acción
+3. **Qué ofrecemos** - 4 características principales + nota sobre hosting
+4. **Paquetes** - 3 paquetes con precios y CTAs individuales
+5. **Beneficios** - 6 razones para elegir el servicio
+6. **Proceso** - 4 pasos del proceso de trabajo
+7. **FAQ** - Acordeón con preguntas frecuentes
+8. **CTA Final** - Llamada a acción final
+9. **Footer** - Links y copyright
+10. **WhatsApp Flotante** - Botón que aparece al hacer scroll
+
+## 🚀 Deploy
+
+### Vercel (Recomendado)
+
+El proyecto está configurado para Vercel. Solo necesitas:
+
+1. Conectar tu repositorio a Vercel
+2. Vercel detectará automáticamente la configuración en `vercel.json`
+3. El deploy se hará automáticamente en cada push
+
+O manualmente:
 
 ```bash
-# Ver estado actual
-git status
-
-# Agregar cambios
-git add .
-
-# Hacer commit
-git commit -m "Tu mensaje"
-
-# Subir cambios
-git push origin main
-
-# Verificar configuración remota
-git remote -v
+npm run build
+npx vercel --prod
 ```
 
-## 🎯 Estado Actual del Proyecto
+### Otras plataformas
 
-✅ Git configurado y conectado
-✅ Vercel configurado con `vercel.json`
-✅ Dependencias instaladas
-✅ Build funcionando correctamente
-✅ Estructura de componentes organizada
-✅ Hooks personalizados implementados
+- **Netlify**: Arrastra la carpeta `dist` después de `npm run build`
+- **GitHub Pages**: Con GitHub Actions
 
-## 📝 Tecnologías Utilizadas
+## 🔧 Tecnologías
 
-- **React 18.2.0** - Biblioteca UI
-- **Vite 5.2.0** - Build tool y dev server
-- **CSS3** - Estilos personalizados
+- **React 18** - Biblioteca UI
+- **Vite** - Build tool y dev server
+- **Tailwind CSS 4** - Framework CSS
+- **PostCSS** - Procesador CSS
+
+## 📝 Notas importantes
+
+- El diseño deja **MUY claro** que no incluye hosting ni dominio (aparece en múltiples secciones)
+- Todos los CTAs dirigen a WhatsApp con mensajes predefinidos
+- El texto está en español mexicano, optimizado para PYMEs locales
+- Los precios están en MXN
+- Arquitectura modular siguiendo principios SOLID para fácil mantenimiento
 
 ## 📄 Licencia
 
-MIT License - Ver archivo LICENSE para detalles.
+MIT
 
-## 💬 Soporte
+---
 
-Para modificaciones o soporte técnico, contacta al equipo de desarrollo.
+**AssistFlowMX** - Tu sitio web listo para anunciarse, sin complicaciones.

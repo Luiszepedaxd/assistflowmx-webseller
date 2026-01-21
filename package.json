@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Landing page para AssistFlowMX - Automatizacion de atencion al cliente",
+  "description": "Landing page para AssistFlowMX - Tu sitio web listo para anunciarse, sin complicaciones",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -27,14 +27,15 @@
     "vite": "^5.2.0"
   },
   "keywords": [
-    "automatizacion",
-    "whatsapp",
-    "atencion-cliente",
-    "cotizaciones",
-    "n8n",
-    "mexico",
+    "páginas web",
+    "diseño web",
+    "landing page",
+    "sitio web mexico",
+    "páginas web baratas",
+    "diseño web para negocios",
     "react",
-    "vite"
+    "vite",
+    "tailwindcss"
   ],
   "author": "AssistFlowMX",
   "license": "MIT",
