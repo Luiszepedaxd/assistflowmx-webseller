@@ -3,80 +3,80 @@ import { MESSAGES } from '../constants/contact';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-gray-100 py-16 px-4">
-      <div className="container mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="relative min-h-screen flex items-center bg-white overflow-hidden">
+      {/* Background decorativo */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-green-50 opacity-50"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-20"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-100 rounded-full blur-3xl opacity-20"></div>
+      
+      <div className="relative container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
           {/* Contenido principal */}
-          <div className="text-center lg:text-left">
-            <div className="flex items-center justify-center lg:justify-start gap-2 mb-8">
-              <svg className="w-8 h-8 text-blue-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L13.09 8.26L19 7L14.74 12L19 17L13.09 15.74L12 22L10.91 15.74L5 17L9.26 12L5 7L10.91 8.26L12 2Z" fill="currentColor"/>
-              </svg>
-              <span className="text-2xl font-bold text-blue-500">AssistFlowMX</span>
+          <div className="text-center lg:text-left space-y-8">
+            {/* Logo */}
+            <div className="flex items-center justify-center lg:justify-start gap-3 mb-8">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
+                <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L13.09 8.26L19 7L14.74 12L19 17L13.09 15.74L12 22L10.91 15.74L5 17L9.26 12L5 7L10.91 8.26L12 2Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+                AssistFlowMX
+              </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Tu sitio web listo para anunciarse, sin complicaciones
+            {/* Headline */}
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-gray-900 leading-tight">
+              Tu sitio web listo para 
+              <span className="block bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent mt-2">
+                anunciarse
+              </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Páginas web estáticas, rápidas y enfocadas en conversión. Perfectas para negocios pequeños que quieren presencia digital inmediata.
+            {/* Subtítulo */}
+            <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              Páginas web estáticas, rápidas y enfocadas en conversión. Perfectas para negocios que quieren presencia digital inmediata.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            {/* CTA Button */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
               <WhatsAppButton 
                 message={MESSAGES.HERO}
-                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center"
+                className="px-10 py-5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-bold text-lg rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 transform text-center"
               >
                 Habla con nosotros en WhatsApp
               </WhatsAppButton>
             </div>
 
             {/* Aviso importante */}
-            <p className="mt-6 text-sm text-gray-500 max-w-xl mx-auto lg:mx-0">
-              ⚠️ <strong>Importante:</strong> Nuestros paquetes no incluyen hosting ni dominio. 
-              Te entregamos tu página lista para que la subas donde prefieras.
-            </p>
+            <div className="pt-6 max-w-xl mx-auto lg:mx-0">
+              <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg">
+                <p className="text-sm text-amber-800">
+                  <span className="font-semibold">Importante:</span> Nuestros paquetes no incluyen hosting ni dominio. Te entregamos tu página lista para que la subas donde prefieras.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Visual - Mockup de página web */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="max-w-md w-full">
-              <div className="bg-white rounded-lg shadow-2xl overflow-hidden">
-                {/* Barra del navegador del mockup */}
-                <div className="bg-gray-800 px-4 py-3 flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
+          {/* Visual - Mockup placeholder para imagen */}
+          <div className="flex justify-center lg:justify-end items-center">
+            <div className="relative w-full max-w-lg">
+              {/* Placeholder para imagen - Este espacio se reemplazará con una imagen */}
+              <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl shadow-2xl overflow-hidden aspect-[4/5] flex items-center justify-center">
+                <div className="text-center p-8">
+                  <div className="w-24 h-24 bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                    <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <p className="text-gray-500 font-medium">Espacio para imagen</p>
+                  <p className="text-sm text-gray-400 mt-2">Mockup de página web</p>
                 </div>
                 
-                {/* Contenido del mockup */}
-                <div className="p-6 bg-gradient-to-br from-blue-50 to-green-50">
-                  <div className="space-y-4">
-                    <div className="h-4 bg-blue-200 rounded w-3/4"></div>
-                    <div className="h-4 bg-gray-200 rounded w-full"></div>
-                    <div className="h-4 bg-gray-200 rounded w-5/6"></div>
-                    
-                    <div className="mt-6 space-y-2">
-                      <div className="h-20 bg-white rounded-lg shadow p-4">
-                        <div className="h-3 bg-gray-300 rounded w-1/2 mb-2"></div>
-                        <div className="h-2 bg-gray-200 rounded w-full mb-1"></div>
-                        <div className="h-2 bg-gray-200 rounded w-3/4"></div>
-                      </div>
-                      <div className="h-20 bg-white rounded-lg shadow p-4">
-                        <div className="h-3 bg-gray-300 rounded w-1/2 mb-2"></div>
-                        <div className="h-2 bg-gray-200 rounded w-full mb-1"></div>
-                        <div className="h-2 bg-gray-200 rounded w-3/4"></div>
-                      </div>
-                    </div>
-                    
-                    <div className="mt-4">
-                      <div className="h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-lg flex items-center justify-center">
-                        <span className="text-white font-semibold text-sm">Botón de WhatsApp</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                {/* Decorative elements */}
+                <div className="absolute top-4 right-4 w-16 h-16 bg-blue-500 rounded-full opacity-10 blur-xl"></div>
+                <div className="absolute bottom-4 left-4 w-20 h-20 bg-green-500 rounded-full opacity-10 blur-xl"></div>
               </div>
             </div>
           </div>
