@@ -1,3 +1,5 @@
+import React from 'react';
+
 /**
  * Contenido estático de la aplicación
  * Single Responsibility: Solo contiene datos de contenido
