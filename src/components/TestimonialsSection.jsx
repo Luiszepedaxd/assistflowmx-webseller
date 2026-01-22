@@ -8,80 +8,126 @@ import React, { useState, useEffect } from 'react';
 const TESTIMONIALS = [
   {
     name: "María González",
+    business: "Panadería Artesanal",
     rating: 5,
-    testimonial: "Excelente servicio, mi página quedó perfecta y en menos de 72 horas. Ahora tengo clientes contactándome todos los días por WhatsApp. ¡Super recomendado!"
+    testimonial: "La página quedó lista en 3 días exactos. Ahora recibo 5-8 pedidos diarios por WhatsApp que antes no tenía. La inversión se pagó sola en el primer mes. ¡Vale totalmente la pena!",
+    avatar: "MG"
   },
   {
     name: "Carlos Ramírez",
+    business: "Taller Mecánico",
     rating: 5,
-    testimonial: "No sabía nada de páginas web y me ayudaron en todo el proceso. La página se ve profesional y ya estoy recibiendo pedidos. Muy contento con el resultado."
+    testimonial: "No tenía idea de cómo hacer una página web. El equipo me explicó todo paso a paso y me ayudaron a subirla. Ahora mis clientes me encuentran en Google y me llaman directo. Increíble.",
+    avatar: "CR"
   },
   {
     name: "Ana Martínez",
+    business: "Boutique de Ropa",
     rating: 4.5,
-    testimonial: "El diseño es moderno y se adapta perfecto a mi negocio. La atención fue excelente y el precio muy justo. Definitivamente volveré a trabajar con ellos."
+    testimonial: "El diseño es moderno y se adapta perfecto a mi estilo. La atención fue excelente, aunque tardaron un día más de lo prometido (pero valió la pena). El precio es justo para lo que recibes.",
+    avatar: "AM"
   },
   {
     name: "Roberto Sánchez",
+    business: "Restaurante Local",
     rating: 5,
-    testimonial: "Mi negocio local ahora tiene presencia online. La página carga rápido y se ve increíble en el celular. Los clientes me dicen que se ve muy profesional."
+    testimonial: "Mi restaurante ahora tiene menú online y los clientes pueden ver fotos de nuestros platillos. La página carga súper rápido en el celular y ya tengo reservaciones por WhatsApp. Totalmente recomendado.",
+    avatar: "RS"
   },
   {
     name: "Laura Fernández",
+    business: "Salón de Belleza",
     rating: 4.5,
-    testimonial: "Proceso súper rápido y sin complicaciones. Me entregaron todo listo para subir y me orientaron en cada paso. Muy satisfecha con el servicio."
+    testimonial: "Proceso rápido y sin complicaciones. Me entregaron todo listo y me orientaron para subirlo a Vercel (que es gratis). Ahora muestro mi trabajo y recibo citas por WhatsApp todos los días.",
+    avatar: "LF"
   },
   {
     name: "José López",
+    business: "Servicios de Plomería",
     rating: 5,
-    testimonial: "Invertí en mi página web y en menos de una semana ya tenía clientes nuevos. El diseño es atractivo y funciona perfecto con mis anuncios de Facebook."
+    testimonial: "Invertí $2,200 y en menos de una semana ya tenía 3 clientes nuevos que me encontraron en Google. La página funciona perfecto con mis anuncios de Facebook. ROI inmediato.",
+    avatar: "JL"
   },
   {
     name: "Patricia Díaz",
+    business: "Gimnasio Local",
     rating: 5,
-    testimonial: "AsistFlowMX transformó mi negocio. Ahora tengo una página profesional que genera confianza en mis clientes. El servicio al cliente es excepcional."
+    testimonial: "Transformaron mi negocio completamente. Antes solo tenía Facebook, ahora tengo una página profesional que genera confianza. Mis nuevos clientes dicen que se ve muy seria la operación.",
+    avatar: "PD"
   },
   {
     name: "Miguel Torres",
+    business: "Ferretería",
     rating: 4.5,
-    testimonial: "Excelente relación calidad-precio. La página superó mis expectativas y el proceso fue muy sencillo. Ya tengo más clientes gracias a mi presencia online."
+    testimonial: "Excelente relación calidad-precio. La página superó mis expectativas. El único detalle es que tuve que aprender a subirla yo mismo, pero me dieron instrucciones claras. Ya tengo más clientes.",
+    avatar: "MT"
   },
   {
     name: "Sofía Hernández",
+    business: "Clases de Yoga",
     rating: 5,
-    testimonial: "Mi emprendimiento ahora se ve profesional. La página es responsive y se ve perfecta en todos los dispositivos. Muy recomendado para pequeños negocios."
+    testimonial: "Mi emprendimiento ahora se ve profesional. La página es responsive y se ve perfecta en todos los dispositivos. Mis alumnos me dicen que se ve muy bonita. Muy recomendado para pequeños negocios.",
+    avatar: "SH"
   },
   {
     name: "Fernando Morales",
+    business: "Servicios de Limpieza",
     rating: 5,
-    testimonial: "Rápido, eficiente y profesional. Me ayudaron desde el inicio hasta el final. La página quedó exactamente como la necesitaba. ¡Excelente trabajo!"
+    testimonial: "Rápido, eficiente y profesional. Me ayudaron desde el inicio hasta el final, incluso me explicaron cómo conseguir un dominio barato. La página quedó exactamente como la necesitaba.",
+    avatar: "FM"
   },
   {
     name: "Gabriela Ruiz",
+    business: "Consultoría Nutricional",
     rating: 4.5,
-    testimonial: "El mejor servicio que he contratado para mi negocio. La página es moderna, funcional y ya está generando resultados. Muy contenta con la inversión."
+    testimonial: "El mejor servicio que he contratado para mi negocio. La página es moderna y funcional. Ya está generando resultados - tengo 3 consultas nuevas esta semana. Muy contenta con la inversión.",
+    avatar: "GR"
   },
   {
     name: "Diego Jiménez",
+    business: "Tienda de Mascotas",
     rating: 5,
-    testimonial: "No pensé que fuera tan fácil tener una página web profesional. El equipo fue muy paciente y me explicó todo. Ahora mi negocio tiene mejor presencia online."
+    testimonial: "No pensé que fuera tan fácil tener una página web profesional. El equipo fue muy paciente con todas mis preguntas. Ahora mi negocio tiene mejor presencia online y más clientes.",
+    avatar: "DJ"
   },
   {
     name: "Valeria Castro",
+    business: "Fotografía de Eventos",
     rating: 5,
-    testimonial: "Increíble experiencia. La página quedó hermosa y ya estoy recibiendo consultas diarias. El diseño es moderno y atractivo. Definitivamente lo recomiendo."
+    testimonial: "Increíble experiencia. La página quedó hermosa y muestra mi portafolio perfectamente. Ya estoy recibiendo consultas diarias por WhatsApp. El diseño es moderno y atractivo. Definitivamente lo recomiendo.",
+    avatar: "VC"
   },
   {
     name: "Andrés Vega",
+    business: "Servicios de Jardinería",
     rating: 4.5,
-    testimonial: "Servicio de primera calidad. La página se ve profesional y funciona perfecto. Me ayudaron con todo el proceso y siempre estuvieron disponibles. Excelente!"
+    testimonial: "Servicio de primera calidad. La página se ve profesional y funciona perfecto. Me ayudaron con todo el proceso y siempre estuvieron disponibles para resolver dudas. Excelente atención al cliente.",
+    avatar: "AV"
   },
   {
     name: "Isabella Mendoza",
+    business: "Pastelería Casera",
     rating: 5,
-    testimonial: "Mi página web es el mejor regalo que le pude dar a mi negocio. El diseño es perfecto, el proceso fue rápido y el resultado superó mis expectativas. ¡Gracias!"
+    testimonial: "Mi página web es el mejor regalo que le pude dar a mi negocio. El diseño es perfecto, el proceso fue rápido (72 horas exactas) y el resultado superó mis expectativas. ¡Gracias por hacerlo tan fácil!",
+    avatar: "IM"
   }
 ];
+
+// Función para generar color de avatar basado en iniciales
+const getAvatarColor = (initials) => {
+  const colors = [
+    'bg-emerald-500',
+    'bg-cyan-500',
+    'bg-blue-500',
+    'bg-purple-500',
+    'bg-pink-500',
+    'bg-orange-500',
+    'bg-indigo-500',
+    'bg-teal-500'
+  ];
+  const index = initials.charCodeAt(0) % colors.length;
+  return colors[index];
+};
 
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -221,10 +267,17 @@ const TestimonialsSection = () => {
                   className="min-w-full px-6 sm:px-12 py-10 sm:py-16"
                 >
                   <div className="max-w-3xl mx-auto text-center">
+                    {/* Avatar */}
+                    <div className="flex justify-center mb-6">
+                      <div className={`w-16 h-16 ${getAvatarColor(testimonial.avatar)} rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg`}>
+                        {testimonial.avatar}
+                      </div>
+                    </div>
+
                     {/* Estrellas */}
-                    <div className="flex items-center justify-center gap-1 mb-6">
+                    <div className="flex items-center justify-center gap-1 mb-4">
                       {renderStars(testimonial.rating)}
-                      <span className="ml-2 text-slate-600 font-medium">
+                      <span className="ml-2 text-slate-600 font-medium text-sm">
                         {testimonial.rating}/5
                       </span>
                     </div>
@@ -234,9 +287,14 @@ const TestimonialsSection = () => {
                       "{testimonial.testimonial}"
                     </blockquote>
 
-                    {/* Nombre */}
-                    <div className="text-slate-900 font-semibold text-lg">
-                      {testimonial.name}
+                    {/* Nombre y negocio */}
+                    <div>
+                      <div className="text-slate-900 font-semibold text-lg mb-1">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-slate-500 text-sm">
+                        {testimonial.business}
+                      </div>
                     </div>
                   </div>
                 </div>

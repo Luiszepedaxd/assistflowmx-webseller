@@ -3,6 +3,7 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import WhatWeOfferSection from './components/WhatWeOfferSection';
 import TestimonialsSection from './components/TestimonialsSection';
+import WhatIncludedSection from './components/WhatIncludedSection';
 import PricingSection from './components/PricingSection';
 import BenefitsSection from './components/BenefitsSection';
 import ProcessSection from './components/ProcessSection';
@@ -30,6 +31,7 @@ function App() {
         <HeroSection />
         <WhatWeOfferSection />
         <TestimonialsSection />
+        <WhatIncludedSection />
         <PricingSection />
         <BenefitsSection />
         <ProcessSection />
