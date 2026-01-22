@@ -2,7 +2,7 @@
  * Configuración de WhatsApp
  * Single Responsibility: Solo maneja la configuración de WhatsApp
  */
-export const WHATSAPP_NUMBER = "521234567890"; // Cambiar por número real
+export const WHATSAPP_NUMBER = "523322705363"; // Número de WhatsApp de AssistFlowMX
 export const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export const WHATSAPP_MESSAGES = {
