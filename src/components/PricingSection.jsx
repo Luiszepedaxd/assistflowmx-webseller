@@ -88,13 +88,13 @@ const PricingSection = () => {
         </div>
 
         {/* Nota sobre hosting */}
-        <div className="mt-12 text-center">
-          <p className="text-slate-500 text-sm flex flex-col sm:flex-row items-center justify-center gap-2 px-4">
-            <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+        <div className="mt-12 text-center px-4">
+          <p className="text-slate-500 text-sm inline-flex items-start sm:items-center justify-center gap-2 max-w-2xl mx-auto leading-relaxed">
+            <svg className="w-4 h-4 flex-shrink-0 mt-0.5 sm:mt-0" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"/>
             </svg>
-            <span className="text-center">
-              Todos los paquetes <strong className="text-slate-400 whitespace-nowrap">no incluyen hosting ni dominio</strong>. 
+            <span className="text-left sm:text-center">
+              Todos los paquetes <strong className="text-slate-400">no incluyen hosting ni dominio</strong>. 
               Te entregamos los archivos listos para subir.
             </span>
           </p>
