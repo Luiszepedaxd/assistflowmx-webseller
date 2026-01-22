@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import WhatWeOfferSection from './components/WhatWeOfferSection';
+import TestimonialsSection from './components/TestimonialsSection';
 import PricingSection from './components/PricingSection';
 import BenefitsSection from './components/BenefitsSection';
 import ProcessSection from './components/ProcessSection';
@@ -28,6 +29,7 @@ function App() {
       <main>
         <HeroSection />
         <WhatWeOfferSection />
+        <TestimonialsSection />
         <PricingSection />
         <BenefitsSection />
         <ProcessSection />
