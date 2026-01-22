@@ -28,10 +28,10 @@ const BenefitsSection = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {BENEFITS.map((benefit, index) => (
             <div key={index} className="group">
-              <span className="text-6xl font-bold text-slate-100 group-hover:text-emerald-500 transition-colors duration-300 block mb-2">
+              <span className="text-6xl font-bold text-emerald-500 block mb-2">
                 {benefit.number}
               </span>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">
+              <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors duration-300">
                 {benefit.title}
               </h3>
               <p className="text-slate-600 leading-relaxed">
