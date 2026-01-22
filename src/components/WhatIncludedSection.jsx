@@ -125,7 +125,7 @@ const WhatIncludedSection = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {/* Opción Gratuita */}
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all">
+            <div className="bg-white rounded-2xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all flex flex-col h-full">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
                   <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -134,7 +134,7 @@ const WhatIncludedSection = () => {
                 </div>
                 <h4 className="font-bold text-slate-900">Gratuito</h4>
               </div>
-              <ul className="space-y-2 mb-4">
+              <ul className="space-y-2 mb-4 flex-grow">
                 <li className="flex items-start gap-2 text-sm text-slate-600">
                   <svg className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
@@ -154,11 +154,11 @@ const WhatIncludedSection = () => {
                   <span><strong>GitHub Pages</strong> - Gratis si tienes cuenta de GitHub</span>
                 </li>
               </ul>
-              <p className="text-xs text-slate-500">Perfecto para empezar sin costo</p>
+              <p className="text-xs text-slate-500 mt-auto">Perfecto para empezar sin costo</p>
             </div>
 
             {/* Opción Económica */}
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all">
+            <div className="bg-white rounded-2xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all flex flex-col h-full">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
                   <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -167,7 +167,7 @@ const WhatIncludedSection = () => {
                 </div>
                 <h4 className="font-bold text-slate-900">Económico</h4>
               </div>
-              <ul className="space-y-2 mb-4">
+              <ul className="space-y-2 mb-4 flex-grow">
                 <li className="flex items-start gap-2 text-sm text-slate-600">
                   <svg className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
@@ -187,11 +187,11 @@ const WhatIncludedSection = () => {
                   <span>Incluye dominio gratis el primer año</span>
                 </li>
               </ul>
-              <p className="text-xs text-slate-500">Buena relación calidad-precio</p>
+              <p className="text-xs text-slate-500 mt-auto">Buena relación calidad-precio</p>
             </div>
 
             {/* Opción Premium */}
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all">
+            <div className="bg-white rounded-2xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all flex flex-col h-full">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
                   <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -200,7 +200,7 @@ const WhatIncludedSection = () => {
                 </div>
                 <h4 className="font-bold text-slate-900">Premium</h4>
               </div>
-              <ul className="space-y-2 mb-4">
+              <ul className="space-y-2 mb-4 flex-grow">
                 <li className="flex items-start gap-2 text-sm text-slate-600">
                   <svg className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
@@ -220,7 +220,7 @@ const WhatIncludedSection = () => {
                   <span>Máximo rendimiento y velocidad</span>
                 </li>
               </ul>
-              <p className="text-xs text-slate-500">Para negocios que buscan lo mejor</p>
+              <p className="text-xs text-slate-500 mt-auto">Para negocios que buscan lo mejor</p>
             </div>
           </div>
 
