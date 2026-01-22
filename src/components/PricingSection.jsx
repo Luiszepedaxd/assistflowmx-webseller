@@ -34,16 +34,16 @@ const PricingSection = () => {
             return (
               <div
                 key={index}
-                className={`relative bg-slate-800/50 backdrop-blur border rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 ${
+                className={`relative bg-slate-800/50 backdrop-blur border rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10 ${
                   pkg.recommended 
                     ? 'border-emerald-500/50 shadow-xl shadow-emerald-500/10' 
-                    : 'border-slate-700 hover:border-slate-600'
+                    : 'border-slate-700'
                 }`}
               >
-                {/* Badge recomendado */}
+                {/* Badge recomendado - dentro de la card */}
                 {pkg.recommended && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-sm font-semibold px-4 py-1.5 rounded-full shadow-lg">
+                  <div className="mb-4">
+                    <span className="inline-block bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-sm font-semibold px-4 py-1.5 rounded-full shadow-lg">
                       Más popular
                     </span>
                   </div>
