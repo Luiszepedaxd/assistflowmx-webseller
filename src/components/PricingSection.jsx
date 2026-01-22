@@ -34,25 +34,25 @@ const PricingSection = () => {
             return (
               <div
                 key={index}
-                className="relative bg-slate-800/50 backdrop-blur border border-slate-700 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10"
+                className="relative bg-slate-800/50 backdrop-blur border border-slate-700 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10 flex flex-col"
               >
-                {/* Badge recomendado - dentro de la card */}
+                {/* Badge recomendado - sticker en esquina superior derecha */}
                 {pkg.recommended && (
-                  <div className="mb-4">
-                    <span className="inline-block bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-sm font-semibold px-4 py-1.5 rounded-full shadow-lg">
+                  <div className="absolute -top-3 -right-3 z-10 group-hover:scale-110 transition-transform duration-300">
+                    <span className="inline-block bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg">
                       Más popular
                     </span>
                   </div>
                 )}
 
-                {/* Nombre y descripción */}
-                <div className="mb-6">
+                {/* Nombre y descripción - altura fija */}
+                <div className="mb-6 min-h-[80px]">
                   <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
                   <p className="text-slate-400 text-sm">{pkg.description}</p>
                 </div>
 
-                {/* Precio */}
-                <div className="mb-8">
+                {/* Precio - altura fija */}
+                <div className="mb-8 min-h-[100px]">
                   <div className="flex items-baseline gap-1">
                     <span className="text-slate-400 text-lg">$</span>
                     <span className="text-5xl font-bold text-white">{pkg.price}</span>
@@ -61,8 +61,8 @@ const PricingSection = () => {
                   <span className="text-slate-500 text-sm">Pago único</span>
                 </div>
 
-                {/* Features */}
-                <ul className="space-y-4 mb-8">
+                {/* Features - crece para llenar espacio */}
+                <ul className="space-y-4 mb-8 flex-grow">
                   {pkg.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start gap-3">
                       <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-slate-500" fill="currentColor" viewBox="0 0 20 20">
@@ -73,12 +73,12 @@ const PricingSection = () => {
                   ))}
                 </ul>
 
-                {/* CTA */}
+                {/* CTA - siempre al final */}
                 <a
                   href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center py-4 rounded-xl font-semibold transition-all duration-200 bg-slate-700 hover:bg-slate-600 text-white"
+                  className="block w-full text-center py-4 rounded-xl font-semibold transition-all duration-200 bg-slate-700 hover:bg-slate-600 text-white mt-auto"
                 >
                   Lo quiero →
                 </a>
