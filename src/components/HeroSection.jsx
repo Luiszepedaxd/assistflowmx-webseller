@@ -37,19 +37,8 @@ const HeroSection = () => {
         {/* Título principal */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fadeInUp">
           Tu sitio web{' '}
-          <span className="relative">
-            <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-              listo para anunciarse
-            </span>
-            <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
-              <path d="M2 10C50 4 100 4 150 6C200 8 250 4 298 10" stroke="url(#gradient)" strokeWidth="3" strokeLinecap="round"/>
-              <defs>
-                <linearGradient id="gradient" x1="0" y1="0" x2="300" y2="0">
-                  <stop stopColor="#34d399"/>
-                  <stop offset="1" stopColor="#22d3ee"/>
-                </linearGradient>
-              </defs>
-            </svg>
+          <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+            listo para anunciarse
           </span>
           <br />
           <span className="text-slate-300">sin complicaciones</span>
