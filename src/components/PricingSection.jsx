@@ -34,7 +34,7 @@ const PricingSection = () => {
             return (
               <div
                 key={index}
-                className="relative bg-slate-800/50 backdrop-blur border border-slate-700 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10 flex flex-col"
+                className="relative bg-slate-800/50 backdrop-blur border border-slate-700 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:border-2 hover:border-emerald-500/80 hover:shadow-xl hover:shadow-emerald-500/25 flex flex-col"
               >
                 {/* Badge recomendado - sticker en esquina superior derecha */}
                 {pkg.recommended && (
