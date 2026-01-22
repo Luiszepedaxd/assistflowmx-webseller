@@ -86,6 +86,8 @@ const TESTIMONIALS = [
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
   // Auto-play del carrusel
   useEffect(() => {
@@ -116,6 +118,33 @@ const TestimonialsSection = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % TESTIMONIALS.length);
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
+  // Funciones para swipe en mobile
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      goToNext();
+    }
+    if (isRightSwipe) {
+      goToPrevious();
+    }
   };
 
   const renderStars = (rating) => {
@@ -176,7 +205,12 @@ const TestimonialsSection = () => {
         {/* Carrusel */}
         <div className="relative">
           {/* Contenedor del carrusel */}
-          <div className="overflow-hidden rounded-3xl bg-white shadow-xl border border-slate-200">
+          <div 
+            className="overflow-hidden rounded-3xl bg-white shadow-xl border border-slate-200 touch-pan-y"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <div 
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -184,7 +218,7 @@ const TestimonialsSection = () => {
               {TESTIMONIALS.map((testimonial, index) => (
                 <div
                   key={index}
-                  className="min-w-full px-8 sm:px-12 py-12 sm:py-16"
+                  className="min-w-full px-6 sm:px-12 py-10 sm:py-16"
                 >
                   <div className="max-w-3xl mx-auto text-center">
                     {/* Estrellas */}
@@ -196,7 +230,7 @@ const TestimonialsSection = () => {
                     </div>
 
                     {/* Testimonio */}
-                    <blockquote className="text-lg sm:text-xl text-slate-700 mb-8 leading-relaxed">
+                    <blockquote className="text-base sm:text-lg md:text-xl text-slate-700 mb-6 sm:mb-8 leading-relaxed px-2">
                       "{testimonial.testimonial}"
                     </blockquote>
 
@@ -210,10 +244,10 @@ const TestimonialsSection = () => {
             </div>
           </div>
 
-          {/* Botones de navegación */}
+          {/* Botones de navegación - Solo visibles en desktop */}
           <button
             onClick={goToPrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-600 p-3 rounded-full shadow-lg border border-slate-200 transition-all duration-200 hover:scale-110 z-10"
+            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-600 p-3 rounded-full shadow-lg border border-slate-200 transition-all duration-200 hover:scale-110 z-10 items-center justify-center"
             aria-label="Testimonio anterior"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -223,7 +257,7 @@ const TestimonialsSection = () => {
 
           <button
             onClick={goToNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-600 p-3 rounded-full shadow-lg border border-slate-200 transition-all duration-200 hover:scale-110 z-10"
+            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-600 p-3 rounded-full shadow-lg border border-slate-200 transition-all duration-200 hover:scale-110 z-10 items-center justify-center"
             aria-label="Siguiente testimonio"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
