@@ -17,9 +17,6 @@ const FAQSection = () => {
       <div className="max-w-3xl mx-auto px-6">
         {/* Encabezado */}
         <div className="text-center mb-12">
-          <span className="inline-block bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
-            Dudas comunes
-          </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5">
             Preguntas frecuentes
           </h2>
