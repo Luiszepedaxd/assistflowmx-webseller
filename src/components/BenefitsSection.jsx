@@ -28,7 +28,7 @@ const BenefitsSection = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {BENEFITS.map((benefit, index) => (
             <div key={index} className="group">
-              <span className="text-6xl font-bold text-slate-100 group-hover:text-emerald-100 transition-colors duration-300">
+              <span className="text-6xl font-bold text-slate-100 group-hover:text-emerald-500 transition-colors duration-300">
                 {benefit.number}
               </span>
               <h3 className="text-xl font-semibold text-slate-900 mt-2 mb-3">
