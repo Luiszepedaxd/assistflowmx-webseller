@@ -98,32 +98,32 @@ export const BENEFITS = [
   {
     number: "01",
     title: "Ahorra tiempo y dinero",
-    description: "Sin contratos mensuales ni costos de mantenimiento. Pagas una vez y la página es tuya para siempre."
+    description: "Pago único. Sin mensualidades."
   },
   {
     number: "02",
     title: "Sin conocimientos técnicos",
-    description: "Nosotros nos encargamos de todo el diseño y desarrollo. Tú solo nos dices qué necesitas."
+    description: "Nosotros diseñamos, tú solo apruebas."
   },
   {
     number: "03",
     title: "Perfecta para publicidad",
-    description: "Diseñadas específicamente para funcionar con campañas de Facebook Ads, Google Ads e Instagram."
+    description: "Optimizada para Facebook Ads y Google Ads."
   },
   {
     number: "04",
     title: "Archivos 100% tuyos",
-    description: "Te entregamos el código completo. Puedes modificarlo, moverlo o hacer lo que quieras con él."
+    description: "Código completo. Edítalo cuando quieras."
   },
   {
     number: "05",
     title: "Soporte por WhatsApp",
-    description: "¿Tienes dudas? Te orientamos sin costo sobre cómo subir tu página y ponerla en línea."
+    description: "Te orientamos gratis sobre cómo publicarla."
   },
   {
     number: "06",
     title: "Diseño que convierte",
-    description: "Cada elemento está pensado para que tus visitantes se conviertan en clientes."
+    description: "Cada botón pensado para vender más."
   }
 ];
 
